@@ -1,0 +1,42 @@
+for ($i=0; $i -lt 10; $i++){
+$path='aneesa'+$i
+New-Item -Path $path -ItemType Directory
+}
+
+
+for ($i=0; $i -lt 10 ; $i++){
+$path='a1'+$i
+for($j=0; $j -lt 10; $j++){
+    $path1='newFolder'+$j
+    New-Item -Path $path/$path1 -ItemType Directory
+    }
+}
+
+
+for($i=0; $i -lt 10; $i++){
+$path='a1'+$i
+for($j=0; $j -lt 10; $j++){
+$path1='newFolder'+$j
+for($k=0; $k -lt 10; $k++){
+$path2='aneesa'+$k+'.txt'
+New-Item -Path $path/$path1/$path2 -ItemType File
+}
+}
+}
+
+
+for($i=0; $i -lt 10; $i++){
+$path='a1'+$i
+for ($j=0; $j -lt 10; $j++){
+$fileName='aneesa'+$i+'.txt'
+Copy-Item -Path $filename -Recurse -Destination $path
+}
+}
+
+for($i=0; $i -lt 10; $i++){
+$path='a1'+$i
+for($k=0; $k -lt 10; $k++){
+$fileName='aneesa'+$k+'.txt'
+Remove-Item -Path $path/$fileName -Recurse 
+}
+}
