@@ -1,0 +1,71 @@
+$cnt=0
+while($cnt -lt 10){
+$fileName='aneesa'+$cnt+'.txt'
+New-Item -Path $fileName -ItemType File
+$cnt+=1
+}
+
+									
+$cnt=0
+while($cnt -lt 10){
+$path='a1'+$cnt
+New-Item -Path $path -ItemType Directory
+$cnt+=1
+}
+									
+									
+$i=0
+while($i -lt 10){
+$path='a1'+$i
+$j=0
+while($j -lt 10){
+$path1='newFolder'+$j
+New-Item -Path $path/$path1 -ItemType Directory
+$j+=1
+}
+$i+=1
+}
+
+									
+$i=0
+while($i -lt 10){
+$path='a1'+$i
+$j=0
+while($j -lt 10){
+$path1='newFolder'+$j
+$k=0
+while($k -lt 10){
+$path2='aneesa'+$k+'.txt'
+New-Item -Path $path/$path1/$path2 -ItemType File
+$k++
+}
+$j++
+}
+$i++ 
+}
+
+									
+$i=0
+while($i -lt 10){
+$fileName='aneesa'+$i+'.txt'
+$j=0
+while ($j -lt 10){
+$path='a1'+$j
+Copy-Item -Path $fileName -Recurse -Destination $path
+$j++
+}
+$i++
+}
+
+									
+$i=0
+while($i -lt 10){
+    $path='a1'+$i
+$j=0
+while ($j -lt 10){
+$fileName='aneesa'+$j+'.txt'
+Remove-Item -Path $path\$fileName -Recurse
+$j++
+}
+$i++
+}
